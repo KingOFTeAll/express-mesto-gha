@@ -27,10 +27,10 @@ const createCard = (req, res) => {
     .then((card) => {
       res.send(card);
       res
-          .status(201)
-          .send({
-            message: 'Сервер успешно обработал запрос',
-          });
+        .status(201)
+        .send({
+          message: 'Сервер успешно обработал запрос',
+        });
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {

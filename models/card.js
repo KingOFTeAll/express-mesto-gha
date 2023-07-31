@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+const validator = require('validator');
+
 const cardSchema = new mongoose.Schema(
   {
     name: {
@@ -11,6 +13,10 @@ const cardSchema = new mongoose.Schema(
     link: {
       type: String,
       required: [true, 'Поле "link" должно быть заполнено'],
+      validate: {
+        validator: (v) => validator.isURL(v),
+        message: 'Некорректный URL',
+      },
     },
     owner: {
       type: mongoose.Schema.Types.ObjectId,
@@ -29,7 +35,7 @@ const cardSchema = new mongoose.Schema(
       default: Date.now,
     },
   },
-  { versionKey: false },);
+);
 
 // const Card = mongoose.model('card', cardSchema);
 // module.exports = Card;
