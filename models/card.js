@@ -29,7 +29,7 @@ const cardSchema = new mongoose.Schema(
       default: Date.now,
     },
   },
-  { versionKey: false });
+  { versionKey: false },);
 
 // const Card = mongoose.model('card', cardSchema);
 // module.exports = Card;
