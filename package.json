@@ -8,7 +8,7 @@
     "dev": "nodemon app.js",
     "lint": "npx eslint ."
   },
-  "author": "",
+  "author": "Dmitrij Vinogradov",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
